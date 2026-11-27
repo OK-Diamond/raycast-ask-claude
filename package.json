@@ -1,0 +1,72 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "ask-claude",
+  "title": "Ask Claude",
+  "description": "Ask Claude a question using your Claude Pro/Max subscription via the Claude Code CLI.",
+  "icon": "icon.png",
+  "author": "local",
+  "license": "MIT",
+  "platforms": ["Windows", "macOS"],
+  "categories": ["Productivity"],
+  "commands": [
+    {
+      "name": "ask",
+      "title": "Ask Claude",
+      "subtitle": "Claude",
+      "description": "Ask Claude a quick question and stream the answer.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "question",
+          "placeholder": "Question",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "model",
+      "title": "Model",
+      "description": "Model alias passed to claude --model.",
+      "type": "dropdown",
+      "required": false,
+      "default": "sonnet",
+      "data": [
+        { "title": "Haiku (fastest)", "value": "haiku" },
+        { "title": "Sonnet (balanced)", "value": "sonnet" },
+        { "title": "Opus (smartest)", "value": "opus" }
+      ]
+    },
+    {
+      "name": "claudePath",
+      "title": "Claude CLI path",
+      "description": "Full path to the claude executable. Leave blank to use ~/.local/bin/claude.exe.",
+      "type": "textfield",
+      "required": false
+    },
+    {
+      "name": "systemPrompt",
+      "title": "System prompt",
+      "description": "Instructions sent with every question.",
+      "type": "textfield",
+      "required": false,
+      "default": "You are a helpful assistant answering quick questions typed into a desktop launcher. Be concise and direct. Use Markdown."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.0"
+  },
+  "scripts": {
+    "build": "ray build",
+    "predev": "node scripts/fix-windows-target.js",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  }
+}
