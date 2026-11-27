@@ -16,6 +16,8 @@ It works by running the official [Claude Code](https://claude.com/claude-code) C
 ## Install
 
 ```sh
+git clone https://github.com/OK-Diamond/raycast-ask-claude.git
+cd raycast-ask-claude
 npm install
 npm run dev
 ```
@@ -41,3 +43,7 @@ Type anything in Raycast, click the ⚙ next to **Use "…" with…**, add **Ask
 - **Model**: Haiku (fastest), Sonnet (default) or Opus.
 - **Claude CLI path**: leave blank to use `~/.local/bin/claude(.exe)`.
 - **System prompt**: instructions sent with every question.
+
+## License
+
+[MIT](LICENSE)
